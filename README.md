@@ -52,7 +52,7 @@ Ejemplo:
 
       sk.Setup(true);   // Se setea la configuracion para la libreria
       delay(1000);
-      sk.Connect(apn);  // Se conecta a NB
+      sk.Connect(apn, band, Network);  // Se conecta a NB
       delay(1000);
     }
 
@@ -69,7 +69,7 @@ Ejemplo:
 
     if (!sk.ConnectionStatus()) // Si no hay conexion a NB
     {
-      sk.Reconnect(apn_entel);  // Se intenta reconecta
+      sk.Reconnect(apn, band, Network);  // Se intenta reconecta
       delay(2000);
     }
 
@@ -117,7 +117,7 @@ Return -> None
       }
       if (!sk.LastMessageStatus)  // Si no se ha enviado el ultimo mensaje
       {
-        sk.ConnectBroker(ClientIdTB, usernameTB, passwordTB);  // Se conecta a ThingsBoard
+        sk.ConnectBroker(clientID, userBroker, passwordBroker, 0, broker, port);  // Se conecta a ThingsBoard
         delay(2000);
       }
       
@@ -134,7 +134,6 @@ Ejemplo:
       // Message
       String object = "temperature";
       String value = "37.8";
-      String msg = "{\"" + object + "\":" + value + "}";
       
-      sk.SendMessage(msg);    // Se envia el mensaje
+      sk.SendMessage(value, topic1, 0, 0, 0, 0, 10000);    // Se envia el mensaje
       delay(2000);
