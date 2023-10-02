@@ -122,8 +122,12 @@ void loop() {
   hum = String(mySHTC3.toPercent());
   temp = String(mySHTC3.toDegC());
   sensorPPM = MQ2.readSensor();
-  batery = (analogRead(PIN_VBAT) * REAL_VBAT_MV_PER_LSB);
+  batery = (analogRead(PIN_VBAT) * REAL_VBAT_MV_PER_LSB /1000);
 
+  /*
+    Codigo para hacer los print con "Serial.prinln(variable);"
+  */
+	
   /*
     Codigo para enviar mensajes al broker
   */
