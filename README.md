@@ -1,6 +1,6 @@
 
 
-#### Insertar en platformio.ini:
+## Insertar en platformio.ini:
 Para lograr la instalación y su futuro uso en la extensión PlatformIO del editor de texto VSCode, se tendrá que ubicar la carpeta StarterKitLibrary en cualquier parte del dispositivo utilizado. Luego, al crear un nuevo proyecto, se tendrá que insertar las siguientes filas de código en el archivo platformio.ini:
 
         monitor_speed = 115200
@@ -11,9 +11,9 @@ Para lograr la instalación y su futuro uso en la extensión PlatformIO del edit
 	        rakwireless/RAKwireless MQx library@^1.0.0
                 
 
-#### Funciones:
+## Funciones:
 
-## bg77_at()
+#### bg77_at()
 
     String StarterKitNB::bg77_at(char *at, uint32_t timeout, bool print)
     
@@ -27,7 +27,7 @@ Ejemplo:
     bg77_at((char *)"AT+QGPSCFG=\"priority\",1", 500);  // Da prioridad a la antena LTE
     delay(500);
 
-## UserAPN()
+#### UserAPN()
 
     void StarterKitNB::UserAPN(String apn, String user, String password);
     
@@ -49,7 +49,7 @@ Ejemplo:
       delay(1000);
     }
     
-## Connect()
+#### Connect()
 
     void StarterKitNB::Connect(String apn, String band = "B28 LTE, B2 LTE", String network = "NB");
     
@@ -70,7 +70,7 @@ Ejemplo:
     }
 
 
-## Reconnect()
+#### Reconnect()
 
     void StarterKitNB::Reconnect(String apn, String band = "B28 LTE, B2 LTE", String network = "NB");
 
@@ -86,7 +86,7 @@ Ejemplo:
       delay(2000);
     }
 
-## ConnectionStatus()
+#### ConnectionStatus()
 
     bool StarterKitNB::ConnectionStatus()
 
@@ -97,7 +97,7 @@ Permite obtener el estado de la conexión y hacer uso de su valor booleano para 
 Return -> true si se encuentra conectado, false si no
 
 
-## ConnectBroker()
+#### ConnectBroker()
 
     void StarterKitNB::ConnectBroker(String clientIdBr, String usernameBr, String passwordBr, int clientIdMQTT, String broker, int port, bool SSL, String cacert, String clientCert, String clientKey, int MRT_OPEN, int MRT_CONN)
 
@@ -134,7 +134,7 @@ Return -> None
         delay(2000);
       }
       
-## SendMessage()
+#### SendMessage()
     
     void StarterKitNB::SendMessage(String message, String topic, int clientIdMQTT, int msgID, int qos, int retain, int MRT_PUBEX)
     
