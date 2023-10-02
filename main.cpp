@@ -127,6 +127,10 @@ void loop() {
   /*
     Codigo para hacer los print con "Serial.prinln(variable);"
   */
+
+  /*
+    Código para ver si el último mensaje fue enviado, sino se conecta al broker
+  */
 	
   /*
     Codigo para enviar mensajes al broker
