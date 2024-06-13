@@ -69,6 +69,10 @@ void loop() {
     Codigo para verificar la conexión a NB-IoT
   */
 
+  /*
+    Codigo para los comandos AT
+  */
+
   SHTC3_Status_TypeDef result = mySHTC3.update();
   hum = String(mySHTC3.toPercent());
   temp = String(mySHTC3.toDegC());
