@@ -14,25 +14,24 @@ StarterKitNB sk;
 SHTC3 mySHTC3;
 
 // NB-IoT
-String apn;
-String user;
-String password;
-String band;
-String Network;
+String apn = "";
+String user = "";
+String password = "";
+String band = ";
+String Network = "";
 
 // MQTT
-String clientID;
-String userBroker;
-String passwordBroker;
-String broker;
-int port;
+String clientID = "";
+String userBroker = "";
+String passwordBroker = "";
+String broker = "";
+int port = 0;
 
 // msg
-String topic1;
-String topic2;
-String topic3;
-String topic4;
-float batery;             
+String topic1 = "user/feeds/nombrefeed";
+String topic2 = "user/feeds/nombrefeed";
+String topic3 = "user/feeds/nombrefeed";
+float battery;             
 
 // temp&hum
 String hum = "";
@@ -57,40 +56,26 @@ void setup() {
   errorDecoder(mySHTC3.begin()); 
   delay(500);
 
-  /*
-    Codigo para conectarse a NB-IoT
-  */
+  // Credenciales y conectar a NB-IoT
+
   
 }
 
 void loop() {
 
-  /*
-    Codigo para verificar la conexión a NB-IoT
-  */
+  	// Revisar si la coneción a NB-IoT sigue
 
-  /*
-    Codigo para los comandos AT
-  */
+  battery = (analogRead(PIN_VBAT) * REAL_VBAT_MV_PER_LSB /1000);
 
-  SHTC3_Status_TypeDef result = mySHTC3.update();
-  hum = String(mySHTC3.toPercent());
-  temp = String(mySHTC3.toDegC());
-  batery = (analogRead(PIN_VBAT) * REAL_VBAT_MV_PER_LSB /1000);
+	// Actualizar temperatura y humedad y printear
 
-  /*
-    Codigo para hacer los print con "Serial.prinln(variable);"
-  */
+  	// Insertar comandos AT
 
-  /*
-    Código para ver si el último mensaje fue enviado, sino se conecta al broker
-  */
-	
-  /*
-    Codigo para enviar mensajes al broker
-  */
+ 	// Conectarse al broker
 
-  delay(1000);
+	// Enviar mensajes
+
+
 
 }
 
