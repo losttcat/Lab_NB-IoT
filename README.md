@@ -11,6 +11,18 @@ Para lograr la instalación y su futuro uso en la extensión PlatformIO del edit
 	        rakwireless/RAKwireless MQx library@^1.0.0
                 
 
+## Sensor de temperatura y humedad:
+
+Para actualizar la temperatura y humedad se utiliza el siguiente comando:
+
+    SHTC3_Status_TypeDef result = mySHTC3.update();
+    
+Para asignar los últimos valores de temperatura y humedad actualizados, se utiliza el siguiente comando:
+
+    hum = String(mySHTC3.toPercent());
+    temp = String(mySHTC3.toDegC());
+
+
 ## Funciones:
 
 #### bg77_at()
@@ -65,10 +77,11 @@ Ejemplo:
 
       sk.Setup(true);   // Se setea la configuracion para la libreria
       delay(1000);
+      sk.UserAPN(apn, user, password);
+      delay(1000);
       sk.Connect(apn, band, Network);  // Se conecta a NB
       delay(1000);
     }
-
 
 #### Reconnect()
 
@@ -80,11 +93,11 @@ Return -> None
 
 Ejemplo:
 
-    if (!sk.ConnectionStatus()) // Si no hay conexion a NB
-    {
-      sk.Reconnect(apn, band, Network);  // Se intenta reconecta
-      delay(2000);
-    }
+      if (!sk.ConnectionStatus()) // Si no hay conexion a NB
+	{
+		sk.Reconnect(apn, band, Network);  // Se intenta reconecta
+		delay(2000);
+  	}
 
 #### ConnectionStatus()
 
