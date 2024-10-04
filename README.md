@@ -3,12 +3,15 @@
 ## Insertar en platformio.ini:
 Para lograr la instalación y su futuro uso en la extensión PlatformIO del editor de texto VSCode, se tendrá que ubicar la carpeta StarterKitLibrary en cualquier parte del dispositivo utilizado. Luego, al crear un nuevo proyecto, se tendrá que insertar las siguientes filas de código en el archivo platformio.ini:
 
-        monitor_speed = 115200
-        monitor_echo = yes
-        lib_deps = 
-	        sparkfun/SparkFun SHTC3 Humidity and Temperature Sensor Library@^1.1.4
-	        C:\Users\yourdirectory\StarterKitLibrary
-	        rakwireless/RAKwireless MQx library@^1.0.0
+        [env:wiscore_rak11200]
+	platform = espressif32
+	board = wiscore_rak11200
+	framework = arduino
+	monitor_speed = 115200
+	monitor_echo = yes
+	lib_deps = 
+   		sparkfun/SparkFun SHTC3 Humidity and Temperature Sensor Library@^1.1.4
+    		C:\Users\directorio\StarterKitLibrary
                 
 
 ## Sensor de temperatura y humedad:
